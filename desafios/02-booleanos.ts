@@ -1,31 +1,29 @@
-// Boleanos
-
 const user = {
-  name: 'Diego Fernandes',
+  name: "Diego Fernandes",
   height: 190,
   hasTicket: true,
+};
+
+const necessaryHeight = 130;
+
+const currentHour = new Date().getHours();
+
+const IsParkOpen = currentHour > 9 && currentHour < 18;
+
+if (!IsParkOpen) {
+  throw new Error("O parque está fechado!");
 }
 
-const necessaryHeight = 130
+const hasTicket = user.hasTicket;
 
-const currentHour = new Date().getHours()
-
-const parkOpen = currentHour > 9 && currentHour < 18
-
-if (!parkOpen) {
-  throw new Error('O parque está fechado!')
+if (!hasTicket) {
+  throw new Error("O Diego não possui um bilhete para entrar no parque!");
 }
 
-const ticket = user.hasTicket
+const canEnterToy = user.height > necessaryHeight;
 
-if (!ticket) {
-  throw new Error('O Diego não possui um bilhete para entrar no parque!')
+if (!canEnterToy) {
+  throw new Error("O Diego não pode entrar no brinquedo!");
 }
 
-const enterToy = user.height > necessaryHeight
-
-if (!enterToy) {
-  throw new Error('O Diego não pode entrar no brinquedo!')
-} 
-
-console.log('O Diego se divertiu muito! :)')
+console.log("O Diego se divertiu muito! :)");
