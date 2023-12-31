@@ -2,10 +2,10 @@ function updateUserRoute({ body, params }) {
   updateUserController({ body, params });
 }
 
-function updateUserController({ data, params }) {
-  userRepository.update({ data, params });
+function updateUserController({ body, params }) {
+  userRepository.update({ body, params });
 }
 
 const userRepository = {
-  update: ({ data, params }) => {},
+  update: ({ body, params }) => {},
 };
